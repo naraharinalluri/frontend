@@ -1,0 +1,70 @@
+/* body{
+    background-image: url(./Nara_proj_3.png);
+    background-size: cover;
+} */
+
+#autoCompText{
+    width: 30%;
+    border: 1px solid grey;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    /* color:rgba(0,0,0,.73); */
+    color: darkblue;
+    margin-top: 20px;
+    margin-left: 0px;
+    /* background-color: lightskyblue;
+     */
+    background: transparent;
+    border-style: none;
+    opacity: 10px;
+}
+
+#input{
+    width: 100%;
+    /* border: solid cyan; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color:rgba(0,0,0,.73);
+}
+#button{
+    /* margin-left: 90px; */
+    /* background: transparent; */
+}
+
+ul{
+    list-style-type: none;
+    /* text-align: left; */
+}
+#li{
+    cursor: pointer;
+    width: 150px;
+    background-color: white;
+    height: 43px;
+    display: inline-block;
+    margin: 0 0 0 0;
+   align-items: unset;
+}
+
+#form{
+    
+    /* padding-left: 380px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+#row{
+    width:50%;
+}
+
+#box{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+#box2{
+    margin-top: 20px;
+    margin-left: 200px;
+    
+}

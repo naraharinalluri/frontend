@@ -1,0 +1,35 @@
+body{
+    font-family: proxima-nova, proxima-nova-1, sans-serif;
+}
+
+#navbar{
+    background-color: #f48024;
+    
+}
+#innerNav{
+    display: flex;
+    justify-content: space-between;
+}
+#searchBar{
+    margin-left: 10px;
+    margin-top: 5px;
+    background-color:transparent;
+    
+}
+#searchBar:hover{
+    background-color: ghostwhite;
+}
+
+#navbarMid{
+display: flex;
+
+}
+#links{
+    display: flex;
+    margin-top: 5px;
+}
+@media screen and (max-width: 800px) {
+    #searchBar, #links {
+        display: none;
+    }
+}

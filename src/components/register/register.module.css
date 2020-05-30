@@ -1,0 +1,18 @@
+/* body{
+    background-image: url('./Nara_proj\ _1.png');
+    background-size: cover;
+} */
+#formBody{
+    /* background-color: gold; */
+    
+}
+#form{
+    /* background-color: greenyellow;
+     */
+     background: transparent;
+    margin-left: 40px;
+    border-style: solid;
+    border-width: thin;
+    border-color: grey;
+    padding: 20px 15px 20px 15px;
+}
