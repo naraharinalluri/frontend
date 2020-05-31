@@ -83,7 +83,7 @@ class AutoComplete extends Component {
         );
     }
 
-    handleSubmit = e => {
+    handleSearch = e => {
         if (!this.dateField.current.valueAsDate || !this.state.text || !this.state.text2) {
             this.dataField.current.innerText = "All Fields are Required"
         }
@@ -117,7 +117,7 @@ class AutoComplete extends Component {
                         <label className="badge badge-success">From</label>  <input id={styles.input} className="form-control" type="text" value={text} onChange={this.onTextChanged} placeholder="Origin" /><br />{this.renderSuggestions()}<br />
                         <label className="badge badge-danger">To</label>  <input id={styles.input} className="form-control" type="text" value={text2} onChange={this.onTexTChanged} placeholder="Destination" /><br />{this.renderSuggestions2()}<br /><br />
                         <label className="badge badge-warning">Date of Journey</label> <input ref={this.dateField} className="form-control" type="Date" /><br />
-                        <button id={styles.button} type="submit" className="btn btn-primary  btn-md" onClick={e => { e.preventDefault(); this.handleSubmit(e) }}>SEARCH</button>
+                        <button id={styles.button} type="submit" className="btn btn-primary  btn-md" onClick={e => { e.preventDefault(); this.handleSearch(e) }}>SEARCH</button>
                     </form>
                 </div>
             </div>

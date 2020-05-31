@@ -14,13 +14,36 @@ export class ViewSeats extends Component {
                     selected: false
                 }
             }),
-            bookedSeats: [],
+            isConfirm: false,
+            help: [],
+            extra: [],
+            bookedSeats: [3, 4],
             arr: [],
             res: [this.props.value]
         }
     }
 
+    componentWillMount() {
+        const data = this.state.res
+        // console.log(data[0])
+        axios.post('booking/seats', data[0])
+            .then(result => {
+                // console.log(result.data)
+                this.setState({ extra: result.data });
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
 
+    componentWillUpdate() {
+
+        // const hi = [...this.state.extra[0].reservation.seats]
+        // this.state.help = hi.concat(this.state.bookedSeats)
+        // this.setState({
+        //     bookedSeats: [... this.state.help]
+        // })
+    }
 
     isBookedSeat(seatNo) {
         return this.state.bookedSeats.includes(seatNo);
@@ -51,24 +74,77 @@ export class ViewSeats extends Component {
         }
     }
     handleSubmit = e => {
-        console.log(this.state.res)
+        // console.log(this.state.extra[0].service.from)
+        // this.setState({
+        //     bookedSeats: [... this.state.bookedSeats, this.state.extra[0].reservation.seats]
+        // })
+
+
+
+        //     const data = this.state.res
+        //     // console.log(data[0])
+        //     axios.post('booking/seats', data[0])
+        //         .then(result => {
+        //             // console.log(result.data)
+        //             this.setState({ extra: result.data[0] });
+        //         })
+        //         .catch(err => {
+        //             console.log(err)
+        //         })
+        // console.log(this.state.extra.reservation.seats)
+        const hi = [...this.state.extra[0].reservation.seats]
+        this.state.help = hi.concat(this.state.bookedSeats)
+        this.setState({
+            bookedSeats: [... this.state.help]
+        })
+        // console.log(this.state.help)
+        // this.setState({
+        //     bookedSeats: this.state.extra.reservation.seats
+        // })
+        // const arr = Array.from(this.state.extra[0].reservation.seats);
+        // arr.forEach(value => console.log(value)
+        // )
+        // const arr = [].slice.call(this.state.extra[0].reservation.seats)
+        // console.log(arr)
+    }
+    showSeats = () => {
+        const hi = [...this.state.extra[0].reservation.seats]
+        this.state.help = hi.concat(this.state.bookedSeats)
+        this.setState({
+            bookedSeats: [... this.state.help],
+            isConfirm: true
+        })
+
+
     }
 
     render() {
-        return (
-            <div className="box">
-                <ul className="seats">
-                    {
-                        this.state.totalSeats.map((item, index) => <li
-                            key={item.seatNo}
-                            onClick={() => this.selectSeatHandler(item.seatNo)}
-                            className={this.isBookedSeat(item.seatNo) ? 'bookedSeat' : item.selected ? 'selected' : ''}>
-                            {item.seatNo}
-                        </li>)
-                    }
-                </ul>
-                <button className="btn btn-md btn-dark" onClick={e => { e.preventDefault(); this.handleSubmit(e) }}>click</button>
-            </div>
-        )
+        if (!this.state.isConfirm) {
+            return (
+                <div className="container">
+                    <button onClick={e => { e.preventDefault(); this.showSeats() }} className="btn btn-primary btn-md">Continue</button>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <div className="box">
+                        <ul className="seats">
+                            {
+                                this.state.totalSeats.map((item, index) => <li
+                                    key={item.seatNo}
+                                    onClick={() => this.selectSeatHandler(item.seatNo)}
+                                    className={this.isBookedSeat(item.seatNo) ? 'bookedSeat' : item.selected ? 'selected' : ''}>
+                                    {item.seatNo}
+                                </li>)
+                            }
+                        </ul>
+                        {/* <button className="btn btn-md btn-dark" onClick={e => { e.preventDefault(); this.handleSubmit2(e) }}>clickq</button> */}
+                        {/* <button className="btn btn-md btn-dark" onClick={e => { e.preventDefault(); this.handleSubmit(e) }}>click</button> */}
+                    </div>
+                </div>
+
+            )
+        }
     }
 }
