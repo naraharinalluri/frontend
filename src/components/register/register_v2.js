@@ -176,7 +176,7 @@ class Register_v2 extends Component {
                         <input type="date" name="dob" className="form-control" placeholder="DD/MM/YYYY" value={this.state.dob} onChange={this.onDobChange} />
                         <div ref={this.dobField} className="text-danger"></div>
                         <br />
-                        <label>Gender</label>&nbsp;
+                        <label >Gender</label>&nbsp;
                         <select className="form-control" value={this.state.gender} onChange={this.onGenderChange}>
                             <option value="">Select</option>
                             <option value="male">Male</option>
@@ -184,7 +184,7 @@ class Register_v2 extends Component {
                         </select>
                         <div ref={this.genderField} className="text-danger"></div><br />
                         <button ref={this.button} className="btn btn-dark btn-md" onClick={e => { e.preventDefault(); this.handleSubmit(e) }}  >Create Account</button><br /><br />
-                        <span>Already a user? <a href="/login">Click Here</a></span>
+                        <span id={styles.span}>Already a user? <a id={styles.span} href="/login">Click Here</a></span>
 
                     </form>
 

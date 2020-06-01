@@ -23,3 +23,22 @@ background: green;
 .box{
     display: flex;
 }
+
+#button{
+    margin:30px;
+}
+.outerBox{
+    display: flex;
+}
+
+#buttonCont{
+    margin-left: 200px;
+}
+#before{
+    margin-top: 210px;
+    margin-left: 350px;
+}
+
+#listBox{
+    background-color: rgb(38,136,205,0.18);
+}

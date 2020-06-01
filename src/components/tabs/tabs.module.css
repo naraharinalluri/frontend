@@ -1,9 +1,13 @@
+body{
+    background: url(./Nara_proj_3.png);
+    background-size: cover;
+}
 #tabs:hover{
     background-color: #d7d4d4d4;
 }
 #list{
     width: 150px;
-    background-color: lightblue;
+    background-color: white;
     height: 43px;
     display: inline-block;
     margin: 0 0 0 0;

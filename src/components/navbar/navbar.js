@@ -7,7 +7,7 @@ class Navbar extends Component {
 
             <div id={styles.navbar} className="container">
                 <div id={styles.innerNav}>
-                    <button className="btn btn-lg btn-warning">Logo</button>
+                    <button id={styles.navButton} className="btn btn-lg ">Logo</button>
                     <div id={styles.navbarMid}>
                         <input id={styles.searchBar} className="form-control form-control-md" type="text" placeholder="Search FAQs" />
                         <div id={styles.links} className="img-fluid">
@@ -16,7 +16,7 @@ class Navbar extends Component {
                             <span><a id={styles.navButton} className="btn btn-md" href="/">CONTACT</a></span>
                             <span><a id={styles.navButton} className="btn btn-md" href="/">FAQs</a></span>
                         </div>
-                        <button className="btn btn-sm btn-light" href="/login">LOGIN</button>
+                        <button id={styles.navButton} className="btn btn-sm " href="/login">LOGIN</button>
                     </div>
                 </div>
             </div>

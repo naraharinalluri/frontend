@@ -87,7 +87,7 @@ class Login extends Component {
             <div>
                 <div id={styles.navbar} className="container">
                     <div id={styles.innerNav}>
-                        <button className="btn btn-lg btn-warning">Logo</button>
+                        <button id={styles.navButton} className="btn btn-lg">Logo</button>
                         <div id={styles.navbarMid}>
                             <input id={styles.searchBar} className="form-control form-control-md" type="text" placeholder="Search FAQs" />
                             <div id={styles.links} className="img-fluid">
@@ -97,7 +97,7 @@ class Login extends Component {
                                 <span><a id={styles.navButton} className="btn btn-md" href="/">FAQs</a></span>
                             </div>
 
-                            <button className="btn btn-sm btn-light" href="/">REGISTER</button>
+                            <button id={styles.navButton} className="btn btn-sm " href="/">REGISTER</button>
 
                         </div>
                     </div>
@@ -114,7 +114,7 @@ class Login extends Component {
                         <input type="password" className="form-control" placeholder="Password" value={this.state.password} onChange={this.onPasswordChange} />
                         <div ref={this.passwordField} className="text-danger"></div>
                         <br />
-                        <button className="btn btn-dark btn-md" onClick={e => { e.preventDefault(); this.handleSubmit(e) }} >LOG IN</button><br /><br />
+                        <button className="btn btn-primary btn-md" onClick={e => { e.preventDefault(); this.handleSubmit(e) }} >LOG IN</button><br /><br />
                         <span> New user? <a href="/">Click Here</a></span><br />
 
 

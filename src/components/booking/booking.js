@@ -21,8 +21,10 @@ class Booking extends Component {
             results: [],
             suggestions: [],
             suggestions2: [],
-            // texts: [this.state.text, this.state.text2]
         }
+    }
+    changeTab = (n) => {
+        this.props.onTabChange(2)
     }
 
     handleSubmit = e => {
@@ -59,7 +61,7 @@ class Booking extends Component {
                                 <td>{item.service.arr}</td>
                                 <td>{item.service.fare}</td>
                                 <td className="text-right">
-                                    <button onClick={e => { e.preventDefault(); this.handleSubmit(item.busNumber) }} className="btn btn-sm btn-primary">SELECT SEATS</button>
+                                    <button onClick={e => { e.preventDefault(); this.handleSubmit(item.busNumber); { this.changeTab(2) } }} className="btn btn-sm btn-primary">SELECT SEATS</button>
                                 </td>
                             </tr>
                         </tbody>
